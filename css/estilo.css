@@ -1,0 +1,741 @@
+/* =========================
+   PALETA COASTAL MINIMAL
+   ========================= */
+:root{
+  /* Base */
+  --color-primary: #2E8C99;     /* Azul petróleo */
+  --color-secondary: #E9D8A6;   /* Arena */
+  --color-accent: #EE6C4D;      /* Coral */
+  --color-light: #F5F5F5;       /* Gris perla */
+  --color-dark: #2B2B2B;        /* Grafito */
+
+  /* Derivados */
+  --color-primary-hover: #25737E;
+  --color-text: var(--color-dark);
+  --color-bg: var(--color-light);
+
+  /* Superficies / bordes / estados */
+  --surface: #FFFFFF;
+  --surface-alt: #FAFAFA;
+  --border: #E0E0E0;
+  --muted: #7A7A7A;
+
+  /* Sombras */
+  --shadow-soft: 0 4px 14px rgba(0,0,0,.07);
+}
+
+/* =========================
+   RESETS SEGUROS (para overflow)
+   ========================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+
+/* =========================
+   BASE
+   ========================= */
+/* Layout base (sticky footer) */
+html, body { height: 100%; }
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1 0 auto; }
+.site-footer { margin-top: auto; } /* <-- vuelve a empujar el footer al final */
+
+/* Quita alturas fijas del formulario */
+.form-section { 
+  padding-block: 1.5rem;
+  /* height: 700px;  <-- QUITAR */
+}
+
+.form-card {
+  max-width: 640px;
+  margin: 50px auto 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  /* height: 300px;   <-- QUITAR */
+}
+
+
+a{ color: var(--color-primary); text-decoration:none }
+a:hover{ text-decoration:underline; color: var(--color-primary-hover); }
+
+/* =========================
+   HEADER
+   ========================= */
+.site-header{
+  display:block;
+  padding: 10px;
+  min-height: 80px;
+  border: 1px solid #d9c58c;          /* tono del secundario */
+  text-align: center;
+  margin-bottom: 30px;
+}
+.site-header h1{ margin:.2em 0; font-size:1.6rem; color: var(--color-primary) }
+.site-header h2{ margin:0 0 .2em 0; font-size:1.1rem; color: var(--muted) }
+.subtitulo{ margin:0; color: #555; }
+
+/* =========================
+   NAV
+   ========================= */
+.main-nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  width: 100%;
+}
+
+/* centramos el contenido dentro del nav */
+.main-nav .container { 
+  margin: 0 auto;          /* centra horizontalmente el bloque */
+  padding: 0 12px;
+  display: flex;
+  justify-content: center;
+  /* <-- CENTRA horizontalmente el ul.menu */
+}
+
+.menu{
+  list-style:none; margin:0; padding:8px 0;
+  display:flex; gap:12px; 
+           
+}
+.menu a{
+  display:inline-block; padding:6px 10px; border-radius:8px;
+  color: var(--color-dark); font-weight:bold; white-space:nowrap;
+}
+.menu a:hover{ background: var(--color-light); color:#222; }
+.menu a.is-active{ background: var(--color-primary); color:#fff; }
+/* En pantallas estrechas: si no cabe, scroll solo en el nav, no en la página */
+@media (max-width: 560px){
+  .menu{ flex-wrap: nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+
+/* =========================
+   CONTENIDO / CARDS
+   ========================= */
+section > article{
+  margin: 0 0 12px 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+section > article h2{ margin:.2em 0; color:#222; }
+
+/* ===== Aside card ===== */
+/* Arreglos de centrado para la sección de recursos */
+.recursos-seccion{
+  margin-top: 20px;
+  padding: 18px;
+  text-align: center;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Asegúrate de que el título también se estiliza en esta sección */
+.recursos-seccion h2{
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  letter-spacing: .2px;
+
+}
+
+/* OJO: nombre correcto de la clase */
+.container-lista{
+  display: flex;
+  flex-direction: column;   /* columna para apilar h2 y ul */
+  align-items: center;      /* centra hijos horizontalmente */
+  gap: 12px;
+}
+
+/* Reset del UL para que no desplace a la derecha */
+.recursos__lista{
+  list-style: none;
+  padding: 0;               /* ← quita padding por defecto */
+  margin: 0;                /* ← quita margen por defecto */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;         /* ancho acotado */
+  /* Alternativa si NO usas flex en el padre:
+  margin-inline: auto;      /* centrar el UL por sí mismo */
+}
+
+/* Ítems de la lista */
+.recursos__item{
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+  padding: 10px 14px;
+}
+
+/* Enlaces dentro de esta sección (selector que sí coincide) */
+.recursos-seccion a{
+  color: var(--color-dark);
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+}
+.recursos-seccion a:hover{
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Indicador externo */
+.recursos-seccion a[href^="http"]::after{
+  content: " ↗";
+  font-weight: 400;
+  opacity: .6;
+}
+
+/* Responsive */
+@media (max-width: 480px){
+  .recursos-seccion{ padding: 14px; }
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer{
+  clear: both;
+    margin-bottom: 10px;
+    padding: 4px;
+    text-align: center;
+    font-size: 80%;
+    border-top: 2px solid black;
+    border-color: #b37d4e;
+}
+
+/* ====== PALETA ====== */
+.paleta-seccion{
+  margin-top: 100px;
+  padding: 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  width: 100%;          
+  
+}
+
+/* título */
+.paleta-seccion h2 {
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+
+/* lista */
+.swatches {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  
+}
+
+/* cada color */
+.swatches li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-soft);
+  font-family: monospace;
+  color: var(--color-dark);
+}
+
+/* el cuadrado de color */
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Colores definidos por variables */
+.swatch--primary-600 { background: var(--color-primary); }
+.swatch--primary-700 { background: var(--color-primary-hover); }
+.swatch--accent-500  { background: var(--color-accent); }
+.swatch--surface     { background: var(--surface); }
+.swatch--text        { background: var(--color-dark); }
+
+/* Adaptable (responsivo) */
+@media (max-width: 480px) {
+  .paleta {
+    padding: 16px;
+  }
+  .swatches li {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* =========================
+   GALERÍA
+   ========================= */
+
+   .gallery-page__header{
+    text-align:center;
+   }
+
+.gallery{ 
+  display:flex; 
+  gap:50px;
+  justify-content: center;
+
+ }
+
+.gallery__item{
+  height: 400px;
+  width:600px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px; overflow:hidden;
+  box-shadow: var(--shadow-soft);
+}
+.gallery__img{ 
+  display:block; 
+  width:100%;
+  height: 350px;;
+  object-fit:cover; }
+
+  
+.gallery__cap{ 
+  text-align: center;
+  padding:8px 10px; 
+  font-size:.95rem; 
+  color:#444; }
+@media (max-width:1024px){ .gallery__item{ flex-basis:33.333%; max-width:33.333%; } }
+@media (max-width:768px) { .gallery__item{ flex-basis:50%;     max-width:50%; } }
+@media (max-width:480px) { .gallery__item{ flex-basis:100%;    max-width:100%; } .gallery__img{ height:200px; } }
+
+/* =========================
+   TABLA
+   ========================= */
+.registro-activities{ margin:20px 0; }
+
+.registro-activities-header h1 {
+  text-align: center;
+
+}
+
+
+
+.activities__table{
+  width:100%; border-collapse:collapse; margin-top:12px;
+  background: var(--surface); border:1px solid var(--border);
+}
+.activities__table th,
+.activities__table td{
+  padding:8px 12px; border:1px solid var(--border); text-align:left;
+}
+.activities__table th{
+  background: var(--color-primary); color:#fff; font-weight:bold;
+}
+.activities__table tr:nth-child(even){ background: var(--surface-alt); }
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+
+.activities-header {
+  text-align: center;
+
+}
+
+.activities__form{
+  margin-top:16px; background: var(--surface);
+  border:1px solid var(--border); border-radius:8px; padding:16px;
+  margin: 0 auto;
+  width: 600px;
+  margin-bottom: 50px;
+}
+.activities__form label{ font-weight:600; color:#222; }
+.activities__form input,
+.activities__form textarea,
+.activities__form select{
+  display:block; width:100%; padding:8px 10px;
+  margin-top:4px; margin-bottom:12px;
+  border:1px solid var(--border); border-radius:6px;
+  font:inherit; background: var(--color-light);
+  transition:border-color .2s, background .2s;
+}
+.activities__form input:focus,
+.activities__form textarea:focus,
+.activities__form select:focus{
+
+  outline:none; 
+  border-color: var(--color-primary); 
+  background:#fff;
+}
+.activities__form input[type="submit"],
+.activities__form input[type="reset"]{
+  display:inline-block; width:auto; cursor:pointer;
+  border:1px solid var(--border); border-radius:8px;
+  background: var(--color-primary); color:#fff; font-weight:bold;
+  padding:8px 14px; 
+  text-align: center;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.activities__form input[type="submit"]:hover,
+.activities__form input[type="reset"]:hover{
+  background: var(--color-primary-hover); border-color: var(--color-primary-hover);
+}
+
+/* La foto se adapta al ancho del form */
+.activities__form .current-photo{
+  display: block;
+  max-width: 100%;
+  height: auto;        /* o fija altura + object-fit: cover si quieres recorte */
+  border-radius: 8px;
+}
+
+
+/* =========================
+   HERO / HOME
+   ========================= */
+.container-image-home{
+  position:relative; width:100%; height:550px;
+  background: url('/media/gallery/turismo10.jpg') center/cover no-repeat;
+  overflow:hidden; display:flex; justify-content:center; align-items:center;
+}
+.texto-container-home{ z-index:2; color:#fff; text-align:center; }
+.container-image-home::after{
+  content:""; position:absolute; inset:0;
+  background: rgba(46,140,153,.28); /* overlay del primario */
+}
+
+/* =========================
+   AGENCIAS (cards)
+   ========================= */
+.agencias{ display:flex; justify-content:space-between; gap:20px; margin:100px 50px; }
+.agencia{
+  flex:1; background: var(--surface);
+  border-radius:15px; overflow:hidden;
+  box-shadow: var(--shadow-soft);
+  text-align:center; padding:20px; border:1px solid var(--border);
+}
+.agencia img{
+  width:100%; height:180px; object-fit:cover;
+  border-radius:12px; margin-bottom:15px;
+}
+
+
+/* =========================
+   SELECTORES EXTRA
+   ========================= */
+.recursos a[href^="http"]{ text-decoration: underline dotted; }
+.features .card:nth-child(2){ outline:2px dashed var(--color-accent); outline-offset:6px; }
+
+/* ACCESIBILIDAD */
+.visually-hidden{
+  position:absolute; width:1px; height:1px; margin:-1px; padding:0;
+  overflow:hidden; clip:rect(0 0 0 0); border:0;
+}
+
+
+/* =========================================================
+   COMPLEMENTOS PARA TU HOME (añadir al final del CSS actual)
+   ========================================================= */
+
+/* Contenedor genérico (para centrar contenido cuando uses .container) */
+.container{ max-width:1100px; margin-inline:auto; padding-inline:12px; }
+
+/* Secciones verticales limpias */
+.seccion-informativa{ 
+  padding-block: 2rem; 
+  margin-bottom: 50px;
+}
+
+/* Titulares auxiliares */
+.lead{ font-size:1.125rem; }
+.muted{
+  text-align: center;  
+  opacity:.8; }
+
+/* -------------------------
+   HERO (encaja con tu markup)
+   ------------------------- */
+/* Ya tienes .container-image-home y .texto-container-home.
+   Añadimos tipografía y botón */
+.texto-container-home h1{
+  margin:0 0 .25em 0;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+  text-shadow: 0 2px 18px rgba(0,0,0,.25);
+}
+.texto-container-home .lead{ color:#f6f6f6; }
+
+/* Botón hecho desde elementos inline (span/a) */
+.enlaceBoton{
+  display:inline-block;
+  padding:.55em .95em;
+  border:2px solid currentcolor;
+  border-radius:999px;
+  background: linear-gradient(#fff,#f3f4f6);
+  color: var(--color-dark);
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow: var(--shadow-soft);
+}
+.enlaceBoton:hover{
+  background:#fff; text-decoration:none; transform: translateY(-1px);
+  transition: transform .15s ease;
+}
+.enlaceBoton:focus-visible{
+  outline:3px solid var(--color-primary); outline-offset:3px;
+}
+
+/* -------------------------
+   GRID reutilizable (para 3 columnas en Home)
+   ------------------------- */
+.grid-3{ 
+  
+  display:flex; flex-wrap: nowrap; gap:16px;
+  margin-top: 50px;
+  
+ }
+
+ 
+
+#info-title{
+  text-align: center;
+}
+/* Tarjetas genéricas (para los <article> y figure) */
+.card{
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow: var(--shadow-soft);
+  transition: transform .2s ease;
+}
+.card:hover{ transform: translateY(-2px) rotate(-.4deg); }
+
+/* -------------------------
+   AGENCIAS (mejora responsiva)
+   ------------------------- */
+.agencias .grid-3{ align-items:stretch; } /* que todas las cards tengan misma altura */
+@media (max-width: 768px){
+  .agencias{ margin:60px 16px; } /* menos margen lateral en móvil */
+}
+
+#agencias-title{
+  text-align: center;
+}
+
+
+/* -------------------------
+   PALETA: truncado/ellipsis demo (si lo usas)
+   ------------------------- */
+.truncateoverflow{ 
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  max-width: 40ch;
+  margin-top: 50px;
+  text-align: center;
+  margin: 50px auto;   
+
+}
+
+
+  /*Efecto al pasar el raton*/
+.truncateoverflow:hover{
+  white-space:normal;
+   overflow: visible;
+  }
+
+
+.container-paleta{
+  height: 300px;
+}
+
+/* -------------------------
+   Accesibilidad: foco visible global
+   ------------------------- */
+a:focus-visible, button:focus-visible, [role="link"]:focus-visible{
+  outline:3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* -------------------------
+   Ajustes menores de tipografía en móvil
+   ------------------------- */
+@media (max-width: 560px){
+  .lead{ font-size:1rem; }
+  .agencia img{ height:160px; }
+}
+
+
+
+/*REGISTRO ACTIVIDAD*/
+
+.form-section h1{
+  text-align: center;
+  
+}
+
+
+.form-section { 
+  
+  padding-block: 1.5rem;
+ 
+
+}
+.form-card {
+  max-width: 640px;
+  margin: 0 auto;
+  margin-top: 50px;;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  
+}
+
+.form-usuario { display: grid; gap: 1rem; }
+
+fieldset { 
+  display: grid;
+  gap: 24px;      /* espacio ENTRE las filas */
+  border: none;
+  padding: 0; 
+  margin: 0;
+}
+
+legend { 
+  font-weight: 600; 
+  margin-bottom: .25rem; }
+
+.form-row {
+  display: grid; gap: 30px;
+
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: .6rem .75rem;
+  border: 1px solid #d1d5db;
+  border-radius: .5rem;
+}
+
+.form-actions { 
+  display: flex; gap: .75rem; justify-content: flex-end; }
+button {
+  padding: .6rem .9rem; border-radius: .5rem; border: 1px solid #d1d5db;
+  background: #f9fafb; cursor: pointer;
+}
+button[type="submit"] { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+
+
+
+.seccion-objetivo{
+  text-align: center;
+  margin-top: 100px;
+   
+}
+
+
+.location{
+  display: block;
+ margin: 0 auto;
+ margin-top:50px;
+ margin-bottom: 50px;
+}
+
+.location-div{
+  margin-top: 50px;
+}
+
+.valores{
+ margin: 0 auto;
+ list-style-position: inside;
+}
+
+#tabla-title{
+  text-align: center;
+
+}
+
+/*ERROR*/
+/* Bloque de error arriba del <main> */
+.error {
+  margin: 1rem auto;
+  padding: .9rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid transparent;
+  max-width: 900px;
+  font-weight: 500;
+   color: #7a1f1f;
+  background: #fde8e8;
+  border-color: #f5c2c2;
+}
+
+
+
+/*REGISTRO LOGIN */
+.registro-section h2 { 
+  text-align: center;
+  color: #2563eb;
+}
+.registro-wrap {
+  max-width: 500px;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+
+/*PARCHE ARREGLO HEADER*/
+.site-header{
+  /* deja tu padding, borde y colores como ya tienes */
+  padding: 10px;
+  border: 1px solid #d9c58c;
+  background: #fff;
+
+  /* clave: que el header gestione bien a sus hijos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  /* asegura que nada lo tape accidentalmente */
+  position: relative;
+  z-index: 10;
+}
+
+.site-header h1 { margin: .2em 0; font-size: 1.6rem; color: var(--color-primary); }
+.site-header .site-counter { margin: 0; color: var(--muted); }
+
+/* el contenedor del botón: evita que se rompa la línea o se “pierda” */
+.site-auth { display: flex; justify-content: center; }
+.site-auth .btn { display: inline-block; }
+
+
+
+

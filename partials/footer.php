@@ -1,21 +1,28 @@
-<!--
 </main>
-<footer class="site-footer">
-  <p>EI1036 · Tecnologías Web para los Sistemas de Información (2025/2026)</p>
-  <p>Professora: Dra. Dolores Mª Llidó Escrivá — <a href="https://www.uji.es/">Universitat Jaume I</a></p>
-  <p>© <time datetime="2025">2025</time>. Documento educativo basado en el temario de la asignatura.</p>
 
-
-</footer>
-</body>
-</html>
--->
-
-</main>
 <footer class="site-footer" role="contentinfo">
-<div class="container">
-<p>&copy; <?= date('Y') ?> Oficina de Turisme · <a href="?action=cookies">Cookies</a></p>
-</div>
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      <strong>Portal de Turismo Internacional</strong>
+      <span class="footer-dot">·</span>
+      <span>&copy; <?= date('Y') ?> Oficina de Turismo</span>
+    </div>
+
+    <nav class="footer-links" aria-label="Enlaces legales">
+      <a href="?action=qui_som">Quiénes somos</a>
+      <a href="?action=lgpd">Política de privacidad</a>
+      <a href="?action=cookies">Cookies</a>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <small>
+      Portal académico (PHP + MySQL + JS) · Contenido de ejemplo para fines educativos.
+    </small>
+  </div>
 </footer>
+
 </body>
 </html>

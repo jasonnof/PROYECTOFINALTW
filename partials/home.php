@@ -2,34 +2,45 @@
 
 <!-- HERO con mensaje principal -->
 <section aria-labelledby="hero-title" class="hero">
-  <div class="container container-image-home">
-    <header class="hero__header">
-      <h1 id="hero-title">Bienvenido al portal de turismo</h1>
-      <p class="lead">Descubre actividades y experiencias.</p>
-    </header>
+  <div class="container-image-home">
+    <div class="texto-container-home">
+      <h1 id="hero-title">Portal de Turismo Internacional</h1>
+      <p class="lead">Experiencias, rutas y actividades culturales por todo el mundo.</p>
+
+      <p style="margin-top:14px;">
+        <a class="enlaceBoton" href="portal.php?action=tablas">Ver actividades</a>
+        <a class="enlaceBoton" style="margin-left:10px;" href="portal.php?action=galeria">Galería</a>
+      </p>
+
+      <p class="muted" style="margin-top:12px;">
+        Destinos como Colombia, Budapest, México y muchos más · PHP + MySQL + Fetch + Canvas · Acceso por roles
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- Sección informativa con <article>: contenido “block” y “inline” -->
+
 <section aria-labelledby="info-title" class="seccion-informativa">
   <div class="container">
     <header>
-      <h2 id="info-title">Cómo funciona</h2>
-      <p class="muted">Ejemplo de elementos <em>inline</em> (em, strong, a, span) y <strong>block</strong> (p, article, ul).</p>
+      <h2 id="info-title">¿Qué puedes hacer aquí?</h2>
+      <p class="muted">Portal para promocionar actividades turísticas internacionales y gestionar trabajadores (roles admin/gestor/visitante).</p>
     </header>
 
     <div class="grid-3">
       <article class="card">
-        <h3>1. Inspírate</h3>
-        <p>Lee reseñas, <a href="?action=galeria">mira fotos</a> y guarda ideas con el icono <span aria-hidden="true">★</span>.</p>
+        <h3>Actividades</h3>
+        <p>Consulta actividades publicadas con lugar, fechas, imágenes y descripción de cada experiencia.</p>
       </article>
+
       <article class="card">
-        <h3>2. Compara</h3>
-        <p>Filtra por <strong>precio</strong>, <strong>ubicación</strong> y <strong>valoraciones</strong>. El contenido sigue entendible sin CSS.</p>
+        <h3>Galería</h3>
+        <p>Explora fotografías de distintos países y ciudades. También tenemos una imagen destacada que rota de forma asíncrona.</p>
       </article>
+
       <article class="card">
-        <h3>3. Reserva</h3>
-        <p>Completa el <a href="?action=form_register">registro</a> y confirma. Etiquetas y <code>label</code> enlazadas a inputs.</p>
+        <h3>Juego Canvas</h3>
+        <p>Juega a “Catch the Tourist”, consigue puntos y guarda tu puntuación en el ranking.</p>
       </article>
     </div>
   </div>
@@ -38,13 +49,13 @@
 <!-- Agencias principales (tu contenido), usando <figure>/<figcaption> -->
 <section aria-labelledby="agencias-title" class="agencias seccion">
   <div class="container">
-    <h2 id="agencias-title">Agencias principales</h2>
+    <h2 id="agencias-title">Agencias colaboradoras</h2>
     <div class="grid-3">
       <figure class="agencia card">
-        <img src="media/agencias/Expedia_Logo.jpg" alt="Logo de Expedia" loading="lazy" width="320" height="180">
+        <img src="media/agencias/expedia.png" alt="Logo de Expedia" loading="lazy" width="320" height="180">
         <figcaption>
           <h3>EXPEDIA</h3>
-          <p>Viajes personalizados por toda Europa con experiencias únicas.</p>
+          <p>Escapadas internacionales y viajes a medida para cualquier destino.</p>
         </figcaption>
       </figure>
 
@@ -52,7 +63,7 @@
         <img src="media/agencias/halcon_viajes.jpg" alt="Logo de Halcón Viajes" loading="lazy" width="320" height="180">
         <figcaption>
           <h3>HALCÓN VIAJES</h3>
-          <p>Especialistas en turismo familiar y escapadas de fin de semana.</p>
+          <p>Especialistas en viajes familiares, circuitos y rutas por Europa y América.</p>
         </figcaption>
       </figure>
 
@@ -60,24 +71,13 @@
         <img src="media/agencias/viajes_elcorteingles.jpg" alt="Logo de Viajes El Corte Inglés" loading="lazy" width="320" height="180">
         <figcaption>
           <h3>VIAJES EL CORTE INGLÉS</h3>
-          <p>Aventuras exóticas y paquetes exclusivos a destinos tropicales.</p>
+          <p>Destinos exóticos, experiencias premium y viajes culturales por todo el mundo.</p>
         </figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- Aside dentro de main con recursos (tu bloque original, afinado) -->
-<<aside class="recursos-seccion" aria-labelledby="recursos-title">
-  <div class="container-lista">
-    <h2 id="recursos-title">Recursos recomendados</h2>
-    <ul class="recursos__lista">
-      <li class="recursos__item"><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element" rel="noopener">MDN: Elementos HTML</a></li>
-      <li class="recursos__item"><a href="https://validator.w3.org/nu/" rel="noopener">Validador HTML</a></li>
-      <li class="recursos__item"><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_selectors" rel="noopener">Selectores CSS (MDN)</a></li>
-    </ul>
-  </div>
-</aside>
 
 
 <!-- Paleta de colores (tu bloque), con demo de overflow/ellipsis -->
@@ -95,8 +95,7 @@
 
     <!-- Mini demo de overflow + ellipsis del temario -->
     <div class="truncateoverflow" title="Texto completo accesible por tooltip">
-      Este es un texto muy largo explicando la paleta de colores que demuestra white-space:nowrap, overflow:hidden y text-overflow:ellipsis en una sola línea…
+      Portal orientado a turismo internacional: países, ciudades y experiencias. Ejemplo de ellipsis con white-space:nowrap, overflow:hidden y text-overflow:ellipsis…
     </div>
   </div>
 </section>
-

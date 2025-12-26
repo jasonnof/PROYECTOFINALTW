@@ -1,14 +1,15 @@
-<aside class="site-aside" aria-label="Informació en temps real">
-<section class="widget">
-<h2>Notícies</h2>
-<ul>
-<li>Avui: Nova ruta guiada pel casc antic.</li>
-<li>Oberta inscripció a taller de ceràmica.</li>
-<li>Concert a la plaça major dissabte.</li>
-</ul>
-</section>
-<section class="widget">
-<h2>Meteorologia</h2>
-<p>(Pend. asincronia JS)</p>
-</section>
+<aside class="site-aside" aria-label="Información adicional">
+  <section class="aside-card" aria-labelledby="weather-title">
+    <h2 id="weather-title" class="aside-title">El tiempo</h2>
+    <div id="weather-box" class="aside-body">
+      <p class="aside-muted">Cargando…</p>
+    </div>
+  </section>
+
+  <section class="aside-card" aria-labelledby="news-title">
+    <h2 id="news-title" class="aside-title">Noticias</h2>
+    <div id="news-box" class="aside-body">
+      <p class="aside-muted">Cargando…</p>
+    </div>
+  </section>
 </aside>

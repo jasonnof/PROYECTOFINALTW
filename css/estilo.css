@@ -339,8 +339,6 @@ section > article h2{ margin:.2em 0; color:#222; }
 
 }
 
-
-
 .activities__table{
   width:100%; border-collapse:collapse; margin-top:12px;
   background: var(--surface); border:1px solid var(--border);
@@ -361,7 +359,6 @@ section > article h2{ margin:.2em 0; color:#222; }
 
 .activities-header {
   text-align: center;
-
 }
 
 .activities__form{
@@ -371,6 +368,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   width: 600px;
   margin-bottom: 50px;
 }
+
 .activities__form label{ font-weight:600; color:#222; }
 .activities__form input,
 .activities__form textarea,
@@ -381,6 +379,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   font:inherit; background: var(--color-light);
   transition:border-color .2s, background .2s;
 }
+
 .activities__form input:focus,
 .activities__form textarea:focus,
 .activities__form select:focus{
@@ -389,6 +388,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   border-color: var(--color-primary); 
   background:#fff;
 }
+
 .activities__form input[type="submit"],
 .activities__form input[type="reset"]{
   display:inline-block; width:auto; cursor:pointer;
@@ -398,6 +398,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   text-align: center;
   transition: background .2s, color .2s, border-color .2s;
 }
+
 .activities__form input[type="submit"]:hover,
 .activities__form input[type="reset"]:hover{
   background: var(--color-primary-hover); border-color: var(--color-primary-hover);
@@ -421,6 +422,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   overflow:hidden; display:flex; justify-content:center; align-items:center;
 }
 .texto-container-home{ z-index:2; color:#fff; text-align:center; }
+
 .container-image-home::after{
   content:""; position:absolute; inset:0;
   background: rgba(46,140,153,.28); /* overlay del primario */
@@ -430,12 +432,14 @@ section > article h2{ margin:.2em 0; color:#222; }
    AGENCIAS (cards)
    ========================= */
 .agencias{ display:flex; justify-content:space-between; gap:20px; margin:100px 50px; }
+
 .agencia{
   flex:1; background: var(--surface);
   border-radius:15px; overflow:hidden;
   box-shadow: var(--shadow-soft);
   text-align:center; padding:20px; border:1px solid var(--border);
 }
+
 .agencia img{
   width:100%; height:180px; object-fit:cover;
   border-radius:12px; margin-bottom:15px;
@@ -446,6 +450,7 @@ section > article h2{ margin:.2em 0; color:#222; }
    SELECTORES EXTRA
    ========================= */
 .recursos a[href^="http"]{ text-decoration: underline dotted; }
+
 .features .card:nth-child(2){ outline:2px dashed var(--color-accent); outline-offset:6px; }
 
 /* ACCESIBILIDAD */
@@ -484,6 +489,7 @@ section > article h2{ margin:.2em 0; color:#222; }
   font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
   text-shadow: 0 2px 18px rgba(0,0,0,.25);
 }
+
 .texto-container-home .lead{ color:#f6f6f6; }
 
 /* Botón hecho desde elementos inline (span/a) */
@@ -499,10 +505,12 @@ section > article h2{ margin:.2em 0; color:#222; }
   cursor:pointer;
   box-shadow: var(--shadow-soft);
 }
+
 .enlaceBoton:hover{
   background:#fff; text-decoration:none; transform: translateY(-1px);
   transition: transform .15s ease;
 }
+
 .enlaceBoton:focus-visible{
   outline:3px solid var(--color-primary); outline-offset:3px;
 }
@@ -511,17 +519,14 @@ section > article h2{ margin:.2em 0; color:#222; }
    GRID reutilizable (para 3 columnas en Home)
    ------------------------- */
 .grid-3{ 
-  
   display:flex; flex-wrap: nowrap; gap:16px;
   margin-top: 50px;
-  
  }
-
- 
 
 #info-title{
   text-align: center;
 }
+
 /* Tarjetas genéricas (para los <article> y figure) */
 .card{
   background: var(--surface);
@@ -531,12 +536,14 @@ section > article h2{ margin:.2em 0; color:#222; }
   box-shadow: var(--shadow-soft);
   transition: transform .2s ease;
 }
+
 .card:hover{ transform: translateY(-2px) rotate(-.4deg); }
 
 /* -------------------------
    AGENCIAS (mejora responsiva)
    ------------------------- */
 .agencias .grid-3{ align-items:stretch; } /* que todas las cards tengan misma altura */
+
 @media (max-width: 768px){
   .agencias{ margin:60px 16px; } /* menos margen lateral en móvil */
 }
@@ -557,16 +564,13 @@ section > article h2{ margin:.2em 0; color:#222; }
   margin-top: 50px;
   text-align: center;
   margin: 50px auto;   
-
 }
-
 
   /*Efecto al pasar el raton*/
 .truncateoverflow:hover{
   white-space:normal;
    overflow: visible;
-  }
-
+}
 
 .container-paleta{
   height: 300px;
@@ -736,6 +740,34 @@ button[type="submit"] { background: #2563eb; color: #fff; border-color: #2563eb;
 .site-auth { display: flex; justify-content: center; }
 .site-auth .btn { display: inline-block; }
 
+/* COOKIES */
+.cookies-policy{
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px 24px;
+  max-width: 150%;
+  z-index: 1000;
+}
 
+.cookies-policy article{
+  text-align: center;
+}
 
+.cookies-policy__accept, .cookies-policy__reject {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
 
+.cookies-policy__accpet:hover, .cookies-policy__reject:hover {
+  background: var(--color-primary-hover);
+}

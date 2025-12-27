@@ -11,6 +11,8 @@
 
   <!-- COnecto con la hoja de estilos del portal -->
   <link rel="stylesheet" href="./css/estilo.css" type="text/css">
+  <!-- Este script comprime y gestiona la política de cookies -->
+  <script src="./scripts/cookies.js" defer async></script>
 </head>
 <body>
 

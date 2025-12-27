@@ -16,6 +16,11 @@
 //Muestro la session
 require_once __DIR__ . '/session.php';
 
+// Muestra el panel de cookies si no se ha aceptado o rechazado aún
+if (empty($_SESSION['cookies_policy'])) {
+    require_once __DIR__ . '/partials/cookies.php';
+}
+
 ini_set('display_errors', 1); #Mostrar errores
 
 
@@ -48,17 +53,8 @@ if (!$allow_action) {
     $error_msg = "Acceso directo no permitido";
     $_error_message = $error_msg; 
     $central = '/partials/home.php';
-}
-
-
-else{
-
-
-    
-
-
+} else{
     switch ($action) {
-
         case "registro":
             $central = "/partials/registro.php";
             break;
@@ -91,9 +87,6 @@ else{
             require_once __DIR__ . '/partials/salida.php';
             $central = '/partials/home.php'; 
             break;
-
-        
-
         case "home":
             $central = "/partials/home.php";
             break;

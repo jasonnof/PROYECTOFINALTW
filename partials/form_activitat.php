@@ -1,35 +1,51 @@
-<section>
-  <div class="form-container">
-    <form action="/portal.php?action=reg_acti" method="post" enctype="multipart/form-data">
-      <label for="codigo">Código:</label><br>
-      <br>
-      <input type="text" id="codigo" name="codigo" required maxlength="5" placeholder="Ej. A006"><br>
-      <br>
-      <label for="nombre">Nombre curso:</label><br>
-      <br>
-      <input type="text" id="nombre" name="nombre" maxlength="50" required><br>
-      <br>
-      <label for="descripcion">Descripción:</label><br>
-      <br>
-      <textarea id="descripcion" name="descripcion" rows="3" cols="40" placeholder="Ej. Excursión al castillo" required></textarea><br>
-      <br>
-      <label for="alumnos_max">Alumnos máx:</label><br>
-      <br>
-      <input type="number" id="alumnos_max" name="alumnos_max" min="1" max="1000" required><br>
-      <br>
-      <label for="vacantes">Plazas vacantes:</label><br>
-      <br>
-      <input type="number" id="vacantes" name="vacantes" min="0" max="1000" required><br>
-      <br>
-      <label for="precio">Precio (€):</label><br>
-      <br>
-      <input type="number" id="precio" name="precio" min="0" step="0.01" required placeholder="Ej. 12.00"><br><br>
-      <br>
-      <label for="foto_actividad">Foto Actividad:</label>
-      <br>
-      <input type="file" id="foto_actividad" name="foto_actividad" accept="image/*" required>
+<section class="form-card">
+  <h2>Añadir actividad</h2>
 
-      <button type="submit">Registrar actividad</button>
-    </form>
-  </div>
+  <form class="form-ui" action="portal.php?action=reg_acti" method="post" enctype="multipart/form-data" novalidate>
+
+    <div class="field">
+      <label for="title">Título *</label>
+      <input id="title" name="title" type="text" required maxlength="150">
+    </div>
+
+    <div class="field">
+      <label for="description">Descripción *</label>
+      <textarea id="description" name="description" required rows="5"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="location">Localización</label>
+      <input id="location" name="location" type="text" maxlength="120">
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label for="start_at">Fecha inicio</label>
+        <input id="start_at" name="start_at" type="datetime-local">
+      </div>
+
+      <div class="field">
+        <label for="end_at">Fecha fin</label>
+        <input id="end_at" name="end_at" type="datetime-local">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="grid-2">
+      <div class="field">
+        <label for="upload">Foto (opcional)</label>
+        <input type="file" accept="image/*" name="foto_cliente" id="upload">
+      </div>
+    </div>
+
+    <div class="field checkbox">
+      <label>
+        <input type="checkbox" name="published" value="1" checked>
+        Publicada
+      </label>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </form>
 </section>

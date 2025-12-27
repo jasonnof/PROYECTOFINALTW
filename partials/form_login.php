@@ -1,26 +1,17 @@
-<section class="login-section">
-    <h2>
-    INICIA SESION
-    </h2>
-    <div class="login-wrap">
-        <form class="login-form"action="/portal.php?action=autentificar" method="post">
-            <lable for="login">Login</lable> 
-            <br></br>
-            <input type="text" id="login" name="login" required value="<?= $_POST['login'] ?? '' ?>">
-            <br></br>
-            <label for="passwd">Password</label>
-            <br></br>
-            <input type="password" id="passwd" name="passwd"required>
-            <br></br>
-            <button type="submit">Entra </button>
+<section class="auth">
+  <h2>Iniciar sesión</h2>
 
-        </form>
-
-
-
+  <form class="auth-form" action="portal.php?action=autentificar" method="post" novalidate>
+    <div class="field">
+      <label for="username">Usuario</label>
+      <input id="username" name="username" type="text" required autocomplete="username">
     </div>
 
+    <div class="field">
+      <label for="password">Contraseña</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password">
+    </div>
 
-
-
+    <button class="btn btn-primary" type="submit">Entrar</button>
+  </form>
 </section>
